@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date:</b>
+  <%= @lecture_note.date %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @lecture_note.notes %>
+</p>
+
+<p>
+  <b>Methods:</b>
+  <%= @lecture_note.methods %>
+</p>
+
+
+<%= link_to 'Edit', edit_lecture_note_path(@lecture_note) %> |
+<%= link_to 'Back', lecture_notes_path %>

@@ -1,4 +1,6 @@
 Lecturemethods::Application.routes.draw do
+  resources :lecture_notes
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
