@@ -11,3 +11,12 @@ bundle exec rake db:migrate
 
 rails generate scaffold course name:string
 bundle exec rake db:migrate
+
+# Add field course_id to LectureNote
+# http://guides.rubyonrails.org/migrations.html
+
+rails generate migration AddCourseIdToLectureNote course_id:integer
+bundle exec rake db:migrate
+
+LectureNote.all.each { | n| n.course_id = 1; n.save}
+

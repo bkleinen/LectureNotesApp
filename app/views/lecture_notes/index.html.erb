@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Course</th>
     <th>Date</th>
     <th>Notes</th>
     <th>Methods</th>
@@ -12,6 +13,7 @@
 
 <% @lecture_notes.each do |lecture_note| %>
   <tr>
+    <td><%= lecture_note.course_id %></td>
     <td><%= lecture_note.date %></td>
     <td><%= lecture_note.notes %></td>
     <td><%= lecture_note.methods %></td>
