@@ -1,29 +1,11 @@
-<h1>Listing lecture_notes</h1>
+<h1>My Lecture Notes</h1>
+<%= form_tag lecture_notes_path, :method => 'get' do %>
+    <p>
+      <%= search_field_tag :search %>
+      <%= submit_tag "Search", :name => nil %>
 
-<table>
-  <tr>
-    <th>Course</th>
-    <th>Date</th>
-    <th>Notes</th>
-    <th>Methods</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @lecture_notes.each do |lecture_note| %>
-  <tr>
-    <td><%= lecture_note.course_id %></td>
-    <td><%= lecture_note.date %></td>
-    <td><%= lecture_note.notes %></td>
-    <td><%= lecture_note.methods %></td>
-    <td><%= link_to 'Show', lecture_note %></td>
-    <td><%= link_to 'Edit', edit_lecture_note_path(lecture_note) %></td>
-    <td><%= link_to 'Destroy', lecture_note, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+    </p>
 <% end %>
-</table>
-
-<br />
+<%= render 'list' %>
 
 <%= link_to 'New Lecture note', new_lecture_note_path %>

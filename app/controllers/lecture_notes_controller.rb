@@ -2,8 +2,11 @@ class LectureNotesController < ApplicationController
   # GET /lecture_notes
   # GET /lecture_notes.json
   def index
-    @lecture_notes = LectureNote.all
-
+    if params[:search]
+      @lecture_notes = LectureNote.where("notes like ?" , "%#{params[:search]}%").order("date desc")
+    else
+      @lecture_notes = LectureNote.order("date desc")
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @lecture_notes }
@@ -25,6 +28,7 @@ class LectureNotesController < ApplicationController
   # GET /lecture_notes/new.json
   def new
     @lecture_note = LectureNote.new
+    @lecture_note.course_id= params[:course_id]
 
     respond_to do |format|
       format.html # new.html.erb

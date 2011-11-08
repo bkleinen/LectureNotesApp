@@ -5,6 +5,10 @@
   <%= @course.name %>
 </p>
 
-
+<%= link_to 'New Lecture note for this course', new_lecture_note_path+"?course_id=#{@course.id}" %>
+<p>
+  <b>Notes for this course:</b>
+  <%= render 'lecture_notes/list' %>
+</p>
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>

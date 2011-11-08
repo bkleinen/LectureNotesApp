@@ -1,0 +1,26 @@
+
+<table>
+  <tr>
+    <th>Course</th>
+    <th>Date</th>
+    <th>Notes</th>
+    <th>Methods</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @lecture_notes.each do |lecture_note| %>
+  <tr>
+    <td><%= lecture_note.course ? (link_to lecture_note.course.name, course_path(lecture_note.course)) : ""%></td>
+    <td><%= lecture_note.date %></td>
+    <td><%= lecture_note.notes %></td>
+    <td><%= lecture_note.methods %></td>
+    <td><%= link_to 'Show', lecture_note %></td>
+    <td><%= link_to 'Edit', edit_lecture_note_path(lecture_note) %></td>
+    <td><%= link_to 'Destroy', lecture_note, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

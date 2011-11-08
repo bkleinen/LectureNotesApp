@@ -20,3 +20,8 @@ bundle exec rake db:migrate
 
 LectureNote.all.each { | n| n.course_id = 1; n.save}
 
+
+- add relation to models
+
+-
+ <td><%= link_to lecture_note.course.name, course_path(lecture_note.course) %></td>
